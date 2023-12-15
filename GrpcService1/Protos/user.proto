@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcService1.Protos";
+
+package users;
+
+service UserPr
+{
+	rpc CreateUser(CreateUserRequest) returns (CreateUserResponse) {}
+	rpc ReadUser(ReadUserRequest) returns (ReadUserResponse) {}
+}
+
+message CreateUserRequest
+{
+	string name =1 ;
+	string surname = 2;
+	string emailAdress = 3;
+}
+
+message CreateUserResponse
+{
+	int32 id = 1;
+}
+
+message ReadUserRequest
+{
+	int32 id =1;
+}
+
+message ReadUserResponse
+{
+	int32 id = 1;
+	string name =2;
+	string surnane = 3;
+	string emailAdress = 4;
+}
